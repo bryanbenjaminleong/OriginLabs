@@ -10,15 +10,57 @@ function App() {
       <main>
         {/* Hero Section */}
         <section className="section hero">
-          <div className="radial-vignette" style={{ position: 'absolute', inset: 0, zIndex: -1 }}></div>
-          <div className="overline">Human-AI Infrastructure</div>
-          <h1 className="hero-headline">We build infrastructure where humans and AI work as one.</h1>
-          <p className="hero-subheadline">
-            Origin Labs creates applied AI systems for enterprise operations, automation, and creative intelligence.
-          </p>
-          <div className="hero-actions">
-            <a href="#products" className="btn btn-primary">Explore Products</a>
-            <a href="#vision" className="btn btn-outline">Our Vision</a>
+          <div className="hero-network">
+            {/* SVG Lines connecting nodes */}
+            <svg className="hero-network-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {/* Top row connections */}
+              <line x1="10" y1="15" x2="30" y2="25" />
+              <line x1="30" y1="25" x2="50" y2="18" />
+              <line x1="50" y1="18" x2="70" y2="30" />
+              <line x1="70" y1="30" x2="90" y2="22" />
+              {/* Middle connections */}
+              <line x1="10" y1="15" x2="15" y2="50" />
+              <line x1="15" y1="50" x2="35" y2="55" />
+              <line x1="35" y1="55" x2="55" y2="48" />
+              <line x1="55" y1="48" x2="75" y2="60" />
+              <line x1="75" y1="60" x2="92" y2="52" />
+              <line x1="50" y1="18" x2="55" y2="48" />
+              <line x1="70" y1="30" x2="75" y2="60" />
+              {/* Bottom connections */}
+              <line x1="15" y1="50" x2="25" y2="80" />
+              <line x1="25" y1="80" x2="45" y2="75" />
+              <line x1="45" y1="75" x2="65" y2="85" />
+              <line x1="65" y1="85" x2="85" y2="78" />
+              <line x1="35" y1="55" x2="45" y2="75" />
+              <line x1="55" y1="48" x2="65" y2="85" />
+              <line x1="75" y1="60" x2="85" y2="78" />
+            </svg>
+            {/* Network nodes */}
+            <div className="hero-network-dot hero-network-dot-1"></div>
+            <div className="hero-network-dot hero-network-dot-2"></div>
+            <div className="hero-network-dot hero-network-dot-3"></div>
+            <div className="hero-network-dot hero-network-dot-4"></div>
+            <div className="hero-network-dot hero-network-dot-5"></div>
+            <div className="hero-network-dot hero-network-dot-6"></div>
+            <div className="hero-network-dot hero-network-dot-7"></div>
+            <div className="hero-network-dot hero-network-dot-8"></div>
+            <div className="hero-network-dot hero-network-dot-9"></div>
+            <div className="hero-network-dot hero-network-dot-10"></div>
+            <div className="hero-network-dot hero-network-dot-11"></div>
+            <div className="hero-network-dot hero-network-dot-12"></div>
+            <div className="hero-network-dot hero-network-dot-13"></div>
+            <div className="hero-network-dot hero-network-dot-14"></div>
+          </div>
+          <div className="hero-content">
+            <div className="overline">Human-AI Infrastructure</div>
+            <h1 className="hero-headline">We build infrastructure where humans and AI work as one.</h1>
+            <p className="hero-subheadline">
+              Origin Labs creates applied AI systems for enterprise operations, automation, and creative intelligence.
+            </p>
+            <div className="hero-actions">
+              <a href="#products" className="btn btn-primary">Explore Products</a>
+              <a href="#vision" className="btn btn-outline">Our Vision</a>
+            </div>
           </div>
         </section>
 
@@ -225,7 +267,7 @@ function App() {
         <div className="footer-content">
           <div className="footer-main">
             <div className="footer-brand">
-              <Logo />
+              <Logo className="footer-logo-svg" />
               <p className="footer-desc">An applied AI innovation group building enterprise infrastructure for the human-AI era.</p>
             </div>
             <div className="footer-links">
