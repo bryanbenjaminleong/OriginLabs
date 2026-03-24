@@ -67,11 +67,11 @@ function App() {
         {/* Research & Economic Futures */}
         <section id="research" className="section research-section">
           <div className="research-header">
-            <div className="overline">Research & Economic Futures</div>
-            <h2 className="research-title">We study the economics of what we build.</h2>
+            <div className="overline">What We've Learned</div>
+            <h2 className="research-title">Insights that shape what we build.</h2>
           </div>
           <p className="research-intro">
-            Origin Labs maintains an active research agenda at the frontier of human-AI operational economics. We believe the companies that will win the next decade are those that understand not just how to deploy AI, but what it fundamentally does to cost structures, team design, and the nature of enterprise value creation.
+            We maintain an active research agenda because the best products come from understanding what actually moves the needle for enterprise operations. Every insight here has informed a product decision — whether it's how to structure workflows, price services, or redesign teams around AI-augmented capabilities.
           </p>
           <div className="research-cards">
             <div className="research-card">

@@ -171,6 +171,7 @@ body {
 .cta-section .btn-primary:hover {
   background-color: #F1F5F9;
   border-color: #F1F5F9;
+  transform: translateY(-2px);
 }
 
 .cta-section .btn-outline {
@@ -182,6 +183,7 @@ body {
 .cta-section .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -199,7 +201,7 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #FFFFFF;
+  color: var(--text-secondary);
   position: relative;
   display: inline-block;
   opacity: 0.9;
@@ -253,22 +255,23 @@ body {
   box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
   z-index: 2;
+  animation: float 6s ease-in-out infinite;
 }
 
-.hero-network-dot-1 { top: 15%; left: 10%; }
-.hero-network-dot-2 { top: 25%; left: 30%; }
-.hero-network-dot-3 { top: 18%; left: 50%; }
-.hero-network-dot-4 { top: 30%; left: 70%; }
-.hero-network-dot-5 { top: 22%; left: 90%; }
-.hero-network-dot-6 { top: 50%; left: 15%; }
-.hero-network-dot-7 { top: 55%; left: 35%; }
-.hero-network-dot-8 { top: 48%; left: 55%; }
-.hero-network-dot-9 { top: 60%; left: 75%; }
-.hero-network-dot-10 { top: 52%; left: 92%; }
-.hero-network-dot-11 { top: 80%; left: 25%; }
-.hero-network-dot-12 { top: 75%; left: 45%; }
-.hero-network-dot-13 { top: 85%; left: 65%; }
-.hero-network-dot-14 { top: 78%; left: 85%; }
+.hero-network-dot-1 { top: 15%; left: 10%; animation-delay: 0s; }
+.hero-network-dot-2 { top: 25%; left: 30%; animation-delay: 0.5s; }
+.hero-network-dot-3 { top: 18%; left: 50%; animation-delay: 1s; }
+.hero-network-dot-4 { top: 30%; left: 70%; animation-delay: 1.5s; }
+.hero-network-dot-5 { top: 22%; left: 90%; animation-delay: 2s; }
+.hero-network-dot-6 { top: 50%; left: 15%; animation-delay: 2.5s; }
+.hero-network-dot-7 { top: 55%; left: 35%; animation-delay: 3s; }
+.hero-network-dot-8 { top: 48%; left: 55%; animation-delay: 3.5s; }
+.hero-network-dot-9 { top: 60%; left: 75%; animation-delay: 4s; }
+.hero-network-dot-10 { top: 52%; left: 92%; animation-delay: 4.5s; }
+.hero-network-dot-11 { top: 80%; left: 25%; animation-delay: 5s; }
+.hero-network-dot-12 { top: 75%; left: 45%; animation-delay: 5.5s; }
+.hero-network-dot-13 { top: 85%; left: 65%; animation-delay: 0.25s; }
+.hero-network-dot-14 { top: 78%; left: 85%; animation-delay: 0.75s; }
 
 /* SVG container for lines */
 .hero-network-svg {
@@ -288,6 +291,11 @@ body {
 @keyframes networkPulse {
   0%, 100% { opacity: 0.8; }
   50% { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+  50% { transform: translate(-50%, -50%) translateY(-8px); }
 }
 
 /* Subtle gradient overlay */
@@ -350,6 +358,7 @@ body {
 .hero .btn-primary:hover {
   background-color: #F0F4F8;
   border-color: #F0F4F8;
+  transform: translateY(-2px);
 }
 
 .hero .btn-outline {
@@ -361,6 +370,7 @@ body {
 .hero .btn-outline:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
 }
 
 .thesis {
@@ -387,6 +397,7 @@ body {
   font-weight: 700;
   margin-bottom: 48px;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
 }
 
 .products-grid {
@@ -448,6 +459,7 @@ body {
   font-size: 40px;
   font-weight: 700;
   letter-spacing: -0.02em;
+  color: var(--text-primary);
   margin-bottom: 24px;
   line-height: 1.2;
 }
@@ -533,6 +545,7 @@ body {
 .feature-name {
   font-size: 20px;
   font-weight: 600;
+  color: var(--text-primary);
 }
 
 .feature-desc {
@@ -551,6 +564,7 @@ body {
   max-width: 800px;
   margin: 0 auto 64px auto;
   line-height: 1.2;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
@@ -687,6 +701,7 @@ body {
   letter-spacing: -0.02em;
   margin-top: 12px;
   line-height: 1.2;
+  color: var(--text-primary);
   text-align: center;
 }
 
@@ -960,6 +975,7 @@ body {
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 8px;
+  color: var(--text-primary);
 }
 
 .feature-desc {
@@ -1085,6 +1101,7 @@ body {
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 24px;
+  color: var(--text-primary);
   line-height: 1.2;
   color: var(--on-dark-primary);
 }
