@@ -1,13 +1,63 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Logo from './components/Logo';
 
 function App() {
+  const [showBackToTop, setShowBackToTop] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Scroll animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    document.querySelectorAll('.section, .research-card, .product-card, .feature-item, .team-value, .discipline').forEach((el) => {
+      el.classList.add('fade-in');
+      observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Back to top button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="app-container grid-background">
-      <Header />
+      <a href="#main-content" className="skip-link">Skip to content</a>
 
-      <main>
+      <button
+        className={`mobile-menu-toggle ${menuOpen ? 'open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle menu"
+        aria-expanded={menuOpen}
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+
+      <main id="main-content">
         {/* Hero Section */}
         <section className="section hero">
           <div className="hero-network">
@@ -119,7 +169,7 @@ function App() {
           <div className="products-grid">
             <a href="https://crosspath.sandbloc.com/" className="product-card" target="_blank" rel="noopener noreferrer">
               <div className="product-image">
-                <img src="/crosspath-product.png" alt="Crosspath" />
+                <img loading="lazy" src="/crosspath-product.png" alt="Crosspath" />
               </div>
               <div className="product-content">
                 <div className="product-tag">
@@ -132,7 +182,7 @@ function App() {
             </a>
             <a href="https://studio.sandbloc.com/" className="product-card" target="_blank" rel="noopener noreferrer">
               <div className="product-image">
-                <img src="/mimphes-product.png" alt="Mimphes" />
+                <img loading="lazy" src="/mimphes-product.png" alt="Mimphes" />
               </div>
               <div className="product-content">
                 <div className="product-tag">
@@ -163,7 +213,7 @@ function App() {
               </blockquote>
             </div>
             <div className="vision-image-wrapper">
-              <img src="/human-ai-face.png" alt="Human and AI — two sides of one team" className="vision-image" />
+              <img loading="lazy" src="/human-ai-face.png" alt="Human and AI — two sides of one team" className="vision-image" />
               <div className="vision-labels">
                 <span className="vision-label">Human</span>
                 <span className="vision-label">AI</span>
@@ -198,7 +248,7 @@ function App() {
               </div>
             </div>
             <div className="features-image">
-              <img src="/infrastructure-diagram.png" alt="Infrastructure Diagram" />
+              <img loading="lazy" src="/infrastructure-diagram.png" alt="Infrastructure Diagram" />
             </div>
           </div>
         </section>
@@ -211,7 +261,7 @@ function App() {
             Origin Labs is a small, focused group of builders, researchers, and operators. We came from enterprise infrastructure, AI research, creative production, and operational roles inside companies where complexity had quietly become the enemy of performance. We founded Origin Labs because we kept seeing the same problem — talented people buried in work that shouldn't require them.
           </p>
           <div className="team-image" style={{ overflow: 'hidden', marginTop: '48px' }}>
-            <img src="/about-team.png" alt="Origin Labs team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img loading="lazy" src="/about-team.png" alt="Origin Labs team" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           </div>
           <div className="team-values">
             <div className="team-value">
@@ -262,6 +312,16 @@ function App() {
           </div>
         </section>
       </main>
+
+      <button
+        className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
+        onClick={scrollToTop}
+        aria-label="Back to top"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M18 15l-6-6-6 6" />
+        </svg>
+      </button>
 
       <footer className="footer">
         <div className="footer-content">
