@@ -270,7 +270,7 @@ function App() {
             </div>
             <div className="team-value">
               <h3 className="team-value-title">We are builders, not researchers.</h3>
-              <p className="team-value-desc">We do research to inform what we ship — not to publish papers. Every insight from our economic futures work feeds directly into product decisions. If we can't build it, it doesn't matter that we understand it.</p>
+              <p className="team-value-desc">We do research to inform what we ship — not to publish papers. Every insight we gather feeds directly into product decisions. If we can't build it, it doesn't matter that we understand it.</p>
             </div>
             <div className="team-value">
               <h3 className="team-value-title">We keep the team small on purpose.</h3>
