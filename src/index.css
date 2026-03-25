@@ -477,14 +477,7 @@ body {
   justify-content: center;
 }
 
-/* Hero specific styles for dark background */
-.hero .overline {
-  color: #006B6B;
-}
-
-.hero .overline::before {
-  background-color: #006B6B;
-}
+/* Hero inherits from base .overline - no overrides needed */
 
 .hero .btn-primary {
   background-color: #006B6B;
